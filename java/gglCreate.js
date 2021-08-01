@@ -1,3 +1,20 @@
+/* LICENSE: Boost Software License 1.0
+written by Jeff Gold, .
+
+Googli.ee Notary Javascript.
+The purpose of this script is to add users to a file, take the hash from 
+uploaded files to ipfs. then associate files with users. once assigned each
+user must verify the document. Once all signers and witnesses have approved.
+All files will then be added to an html script converted into a url and delivered
+the user through a weblink and qr code. with option to mint the site to an NFT.
+********
+
+import {
+        Person,
+        UploadedDocs
+} from './classes.js'
+
+
 /* Step 1 
         -optional user logging 
         -update Person class
