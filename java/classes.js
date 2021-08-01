@@ -1,5 +1,5 @@
 /* LICENSE: Boost Software License 1.0
-written by Jeff Gold
+written by Jeff Gold, .
 
 Googli.ee Notary Javascript.
 The purpose of this script is to add users to a file, take the hash from 
