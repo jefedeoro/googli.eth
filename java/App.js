@@ -13,7 +13,13 @@ import {
         Person,
         UploadedDocs
 } from './classes.js'
-
+import constants from './constants.js'
+import ipfsQuery from './ipfsQuery.js'
+import unlockProtocol from './unlockProtocol'
+import fluence from './fluence.js'
+import bitty from './bitty.js'
+import miniUrl from './miniUrl.js'
+import mintNFT from './mintNFT.js'
 
 /* Step 1 
         -optional user logging 
