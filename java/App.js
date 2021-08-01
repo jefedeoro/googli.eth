@@ -59,5 +59,5 @@ import mintNFT from './mintNFT.js'
         - if options are added send reward to user[0] by default
         - options to split reward to all users 
         - rewards are paid in native token
-
+*/
 
