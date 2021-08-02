@@ -26,8 +26,8 @@
 /* Step 4 
         - All Person(s) involved verify all signatures. 
         - All UploadedDocs arranged on a single page html 
-        - Send html code to bitty
-        - Send bitty URL to urlShrinker
+        - Send html code to googli.ee
+        - Send googli.ee URL to urlShrinker
         - (optional) create NFT send to all users walletAddress
 */
 
@@ -36,5 +36,3 @@
         - if options are added send reward to user[0] by default
         - options to split reward to all users 
         - rewards are paid in native token
-
-
