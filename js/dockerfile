@@ -19,4 +19,4 @@ RUN apt-get update  \
     ipfs init;
 
 COPY ./src/ /usr/share/nginx/html/
-CMD [ "/usr/local/ipfs daemon --mount &; ", "nginx", "-g", "daemon off;"]
+CMD [ "ipfs daemon --mount &; ", "nginx", "-g", "daemon off;"]
