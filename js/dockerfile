@@ -15,7 +15,8 @@ RUN curl "$IPFS_URL" > ipfs.tgz; \
 RUN apt-get update  \
     && apt-get -y install fuse; \
     mkdir /ipfs; \
-    mkdir /ipns;
+    mkdir /ipns; \
+    ipfs init;
 
 COPY ./src/ /usr/share/nginx/html/
 CMD [ "/usr/local/ipfs daemon --mount &; ", "nginx", "-g", "daemon off;"]
