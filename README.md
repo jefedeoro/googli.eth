@@ -1,4 +1,4 @@
-# googli.ee
+# googli.eth
 HackFS 2021 project
 
 Creating a secure platform for people to easily back up their data and have it returned in an easily viewable format from any device. 
