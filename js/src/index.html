@@ -465,7 +465,7 @@
     window.onhashchange = window.onload = function() {
         var hash = window.location.hash.substring(1);
         if (hash.length < 3) {
-            location.href = "/edit"
+            location.href = "edit.html"
         } else {
             var iframe = document.getElementById("iframe");
             var link = document.getElementById("edit");
@@ -491,7 +491,7 @@
                 preamble = HEAD_TAGS
             }
             link.onclick = function() {
-                location.href = "/edit" + location.hash
+                location.href = "edit.html" + location.hash
             };
             var isIE = navigator.userAgent.match(/rv:11/);
             var isEdge = navigator.userAgent.match(/Edge\//);
@@ -513,7 +513,7 @@
                 }
             });
             var link = document.getElementById("edit");
-            link.href = "/edit" + location.hash;
+            link.href = "edit.html" + location.hash;
             link.style.display = editable ? "block" : "none"
         }
     };
