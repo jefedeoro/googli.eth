@@ -257,7 +257,7 @@ function updateLink(url, title, push) {
 
 function makeQRCode() {
     var url =
-        "https://zxing.org/w/chart?cht=qr&chs=548x548&chld=L|1&choe=UTF-8&chl=" +
+        "qr.html?url=" +
         encodeURIComponent(location.href);
     this.href = url;
 }
