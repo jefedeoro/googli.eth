@@ -258,7 +258,7 @@ function updateLink(url, title, push) {
 function makeQRCode() {
     var url =
         "qr.html?url=" +
-        encodeURIComponent(location.href);
+        encodeURIComponent(location.href.replace("edit.html", "view.html"));
     this.href = url;
 }
 
@@ -295,7 +295,7 @@ function saveLink() {
 
 function tweetLink() {
     var url =
-        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(location.href);
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(location.href.replace("edit.html", "view.html"));
     window.open(url, "_blank");
     return false;
 }

@@ -37,8 +37,6 @@ window.onload = function() {
     content.addEventListener("drop", handleDrop);
     content.addEventListener("paste", handlePaste);
     content.contentEditable = "false";
-    content.focus();
-    document.execCommand("selectAll", false, null);
     QS("#qrcode").onclick = makeQRCode;
     QS("#twitter").onclick = tweetLink;
     QS("#copy").onclick = copyLink;
