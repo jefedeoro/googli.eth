@@ -36,7 +36,7 @@ window.onload = function() {
     QS("#doc-title").addEventListener("keyup", handleInput);
     content.addEventListener("drop", handleDrop);
     content.addEventListener("paste", handlePaste);
-    content.contentEditable = "true";
+    content.contentEditable = "false";
     content.focus();
     document.execCommand("selectAll", false, null);
     QS("#qrcode").onclick = makeQRCode;
@@ -273,7 +273,6 @@ function copyThenLink() {
 
 function copyLink() {
     var text = location.href;
-    text = text.replace("edit.html", "view.html")
     var dummy = document.createElement("input");
     document.body.appendChild(dummy);
     dummy.value = text;

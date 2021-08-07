@@ -7,14 +7,14 @@
 <script src="lzma/lzma_worker-min.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="data.js"></script>
-<script src="edit.js"></script>
+<script src="view.js"></script>
 <link rel="stylesheet" type="text/css" href="edit.css">
 
 <body>
     <div class="text-box">
         <h1>Googli.eth</h1>
     </div>
-    <div id="doc-title" contenteditable="true" placeholder="googli.ee"></div>
+    <div id="doc-title" contenteditable="false"></div>
     <div id="doc-file"></div>
 
     <div id="placeholder">
@@ -22,7 +22,7 @@
 
     </div>
     <div id="copy-message">Link copied to clipboard.</div>
-    <div id="content"></div>
+    <div id="content" contenteditable="false"></div>
     <span id="toolbar">
   <a target="_blank" id="length"></a>&nbsp;<a target="_blank" id="qrcode" href="qr.html">qr code</a>&nbsp;<a target="_blank" id="menu">menu</a>
   <div id="menu-contents" class="menu">
