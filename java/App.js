@@ -10,8 +10,8 @@ the user through a weblink and qr code. with option to mint the site to an NFT.
 ********/
 
 import {
-        Person,
-        UploadedDocs
+    Person,
+    UploadedDocs
 } from './classes.js'
 import constants from './constants.js'
 import ipfsQuery from './ipfsQuery.js'
@@ -49,8 +49,8 @@ import mintNFT from './mintNFT.js'
 /* Step 4 
         - All Person(s) involved verify all signatures. 
         - All UploadedDocs arranged on a single page html 
-        - Send html code to bitty
-        - Send bitty URL to urlShrinker
+        - Send html code to googli.ee
+        - Send googli.ee URL to urlShrinker
         - (optional) create NFT send to all users walletAddress
 */
 
@@ -61,3 +61,5 @@ import mintNFT from './mintNFT.js'
         - rewards are paid in native token
 */
 
+-
+rewards are paid in native token
