@@ -2,62 +2,127 @@
 
 <html>
 
-      <head>
-        <meta name -"viewport" content="with=device-width, initial scale=1.0">
+<head>
+    <meta name -"viewport" content="with=device-width, initial scale=1.0">
+    <script>
+        (function (d, s) {
+            var js = d.createElement(s),
+                sc = d.getElementsByTagName(s)[0];
+            js.src = "https://paywall.unlock-protocol.com/static/unlock.latest.min.js";
+            sc.parentNode.insertBefore(js, sc);
+        }(document, "script"));
+    </script>
+    <script>
+        var unlockProtocolConfig = {
+            // network: 1, // Network ID (1 is for mainnet, 4 for rinkeby... etc)
+            // locks: {
+            //     '0xabc': { // 0xabc is the address of a lock.
+            //         name: 'One Week',
+            //         network: 1 // you can customize the network for each lock
+            //     },
+                // '0xdef': {
+                //     name: 'One Month' 
+          network: 100 // lock on the xDai chain
+                },
+                '0xb420D5671a44b8508FD2C9EE95245D5FC75Ccba2': {
+                    // if no name is used, the default from the contract is used
+                } // you can add as many locks as you want.
+            },
+            icon: 'https://app.unlock-protocol.com/static/images/svg/default.svg',
+            callToAction: {
+                default: 'This content is locked. Pay with cryptocurrency to access it!',
+                expired: 'This is what is shown when the user had a key which is now expired',
+                pending: 'This is the message shown when the user sent a transaction to purchase a key which has not be confirmed yet',
+                confirmed: 'This is the message shown when the user has a confirmed key',
+                noWallet: 'This is the message shown when the user does not have a crypto wallet which is required...',
+            },
+            referrer: '0xreferrer' // Address of the referrer who will earn UDT governance tokens if the transaction is eligible.
+        }
+    </script>
+    <title> Webpage googli.eth </title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
 
-                <title> Webpage googli.eth  </title>
-                <link rel="stylesheet" href="Style.css">
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+</head>
 
-      </head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="/logo.png" alt="logo" </a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">ABOUT US</a></li>
+                        <li><a href="">PRODUCT</a></li>
+                        <li><a href="">DEVELOPERS</a></li>
+                        <li><a href="">PRICING</a></li>
 
-              <body> 
-                <section class="header">
-                   <nav>
-                       <a href="index.html"><img src="Images/Screen Shot 2021-08-04 at 07.39.35.png" alt="logo"</a>
-                       <div class="nav-links">
-                        <ul>
-                          <li><a href="">HOME</a></li>
-                          <li><a href="">ABOUT US</a></li>
-                          <li><a href="">PRODUCT</a></li>
-                          <li><a href="">DEVELOPERS</a></li>
-                          <li><a href="">PRICING</a></li>
+                    </ul>
 
-                        </ul>
+                </div>        
+        </nav>
 
-                       </div>
-                   </nav>
-                   <div class="text-box">
-                     <h1>googli.eth</h1>
-                     <p>HackFS 2021 project</p>
-                     <a href="" class="hero-btn">Know more</a>
 
-                   </div>
-                  
-                   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<div class="file-upload">
-  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Document</button>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <div class="file-upload">
+            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
+                Document</button>
 
-  <div class="image-upload-wrap">
-    <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-    <div class="drag-text">
-      <h3>Drag and drop a file or select add Image</h3>
-    </div>
-  </div>
-  <div class="file-upload-content">
-    <img class="file-upload-image" src="#" alt="your image" />
-    <div class="image-title-wrap">
-      <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-    </div>
-  </div>
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" src="#" alt="your image" />
+                <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                            class="image-title">Uploaded Image</span></button>
+                </div>
+            </div>
+        </div>
+
+<div class="frame">
+    <p align="justify/center" style="width: 90%; 
+        margin: 
+        0 auto;" , class="unlock-content locked">
+        Please sign up to continue with Unlock-Protocol login.
+        <br><br>
+        All are optional. Reward eligibility requires User Name, E-mail, and Googli.eth Unlock-Protocol NFT.
+        <br><br>
+        Full login information is required for increased document verification.
+    </p>
+    <br>
+
+    <p style="width: 90%; 
+        margin: 0 auto;" , class="unlock-content locked"
+        onclick="window.unlockProtocol && window.unlockProtocol.loadCheckoutModal()">
+        <button style="width: 90%; margin: 0 auto;" , class="button">
+            login in or sign up now!
+        </button>
+    </p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="text-box">
+    <h1>googli.eth</h1>
+    <p>HackFS 2021 project</p>
+    <a href="" class="hero-btn">Know more</a>
+
 </div>
 
 
-
-
-                </section>
+    </section>
 
 
 
@@ -70,6 +135,10 @@
 
 
 
-              </body>
+</body>
+<br>
+<br>
+<br>
+
 
 </html>
