@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <header>
+
+ <!-- if we have time lets try and find an ipfs based font lib.  -->
+
+        <link rel="stylesheet" href="Style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+            rel="stylesheet">
+
+
+        <script src="adRemoverUtils.js"></script>
+        <script>
+            ; (function (d, s) {
+                var js = d.createElement(s),
+                    sc = d.getElementsByTagName(s)[0]
+                js.src =
+                    'https://staging-paywall.unlock-protocol.com/static/unlock.1.0.min.js'
+                sc.parentNode.insertBefore(js, sc)
+            })(document, 'script')
+        </script>
+
+        <script>
+            var unlockProtocolConfig = {
+                // network: 1, // Network ID (1 is for mainnet, 4 for rinkeby... etc)
+                // locks: {
+                //     '0xabc': { // 0xabc is the address of a lock.
+                //         name: 'One Week',
+                //         network: 1 // you can customize the network for each lock
+                //     },
+                // '0xdef': {
+                //     name: 'One Month' 
+                network: 100, // lock on the xDai chain
+                locks: {
+                    '0xb420D5671a44b8508FD2C9EE95245D5FC75Ccba2': {
+                        // if no name is used, the default from the contract is used
+                        // you can add as many locks as you want.
+                    },
+                    icon: 'https://app.unlock-protocol.com/static/images/svg/default.svg',
+                    callToAction: {
+                        default: 'This content is locked. Pay with cryptocurrency to access it!',
+                        expired: 'This is what is shown when the user had a key which is now expired',
+                        pending: 'This is the message shown when the user sent a transaction to purchase a key which has not be confirmed yet',
+                        confirmed: 'This is the message shown when the user has a confirmed key',
+                        noWallet: 'This is the message shown when the user does not have a crypto wallet which is required...',
+                    },
+                    referrer: '0xreferrer' // Address of the referrer who will earn UDT governance tokens if the transaction is eligible.
+                }
+            }
+        </script>
+
+        <script>
+            let unlocked = false
+            // Once the doc has been loaded
+            window.addEventListener('DOMContentLoaded', event => {
+                //loadAds()
+                setTimeout(() => !unlocked && loadAds(document), 100)
+            })
+
+            window.addEventListener('unlockProtocol', function (e) {
+                var state = e.detail
+                if (state === 'locked') {
+                    loadAds(document)
+                } else if (state === 'unlocked') {
+                    unlocked = true
+                    hideAds(document)
+                }
+            })
+        </script>
+        <link rel="stylesheet" href="adremover.css" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <h4>Verify User</h4>
+        <button onclick="loadCheckout(window)">
+            Unlock for verification and reward options!
+        </button>
+        </script>
+
+
+        </head>
+
+        <body>
+            <section class="header">
+                <nav>
+                    <a href="index.html"><img src="/logo.png" alt="logo" </a>
+                        <div class="nav-links">
+                            <ul>
+                                <li><a href="">HOME</a></li>
+                                <li><a href="">ABOUT US</a></li>
+                                <li><a href="">PRODUCT</a></li>
+                                <li><a href="">DEVELOPERS</a></li>
+                                <li><a href="">PRICING</a></li>
+
+                            </ul>
+
+                        </div>
+                </nav>
+                <title> Webpage googli.eth </title>
+                <h1>Googli.eth</h1>
+                <h2>Your decentralized notary.</h2>
+
+                <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                <div class="file-upload">
+                    <button class="file-upload-btn" type="button"
+                        onclick="$('.file-upload-input').trigger( 'click' )">Add
+                        Document</button>
+
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                        <div class="drag-text">
+                            <h3>Drag and drop a file or select add Image</h3>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                                    class="image-title">Uploaded Image</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frame">
+                    <p align="justify/center" style="width: 90%; 
+        margin: 
+        0 auto;" , class="unlock-content locked">
+                        Please sign up to continue with Unlock-Protocol login.
+                        <br><br>
+                        All are optional. Reward eligibility requires User Name, E-mail, and Googli.eth Unlock-Protocol
+                        NFT.
+                        <br><br>
+                        Full login information is required for increased document verification.
+                    </p>
+                    <br>
+
+                    <p style="width: 90%; 
+        margin: 0 auto;" , class="unlock-content locked"
+                        onclick="window.unlockProtocol && window.unlockProtocol.loadCheckoutModal()">
+                        <button style="width: 90%; margin: 0 auto;" , class="button">
+                            login in or sign up now!
+                        </button>
+                    </p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                <div class="text-box">
+                    <h1>googli.eth</h1>
+                    <p>HackFS 2021 project</p>
+                    <a href="" class="hero-btn">Know more</a>
+
+                </div>
+
+
+            </section>
+        </body>
+        <br>
+        <br>
+        <br>
+
+
+</html>
