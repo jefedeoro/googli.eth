@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <header>
 
- <!-- if we have time lets try and find an ipfs based font lib.  -->
+        <!-- if we have time lets try and find an ipfs based font lib.  -->
 
         <link rel="stylesheet" href="Style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
             rel="stylesheet">
 
 
-        <script src="adRemoverUtils.js"></script>
+        <script src="unlock.js"></script>
         <script>
             ; (function (d, s) {
                 var js = d.createElement(s),
@@ -45,11 +45,11 @@
                     },
                     icon: 'https://app.unlock-protocol.com/static/images/svg/default.svg',
                     callToAction: {
-                        default: 'This content is locked. Pay with cryptocurrency to access it!',
-                        expired: 'This is what is shown when the user had a key which is now expired',
-                        pending: 'This is the message shown when the user sent a transaction to purchase a key which has not be confirmed yet',
-                        confirmed: 'This is the message shown when the user has a confirmed key',
-                        noWallet: 'This is the message shown when the user does not have a crypto wallet which is required...',
+                        default: 'This content is locked. sign up to access it!',
+                        expired: 'This key is now expired. Please renew of sign up for a new key.',
+                        pending: 'Thank you. The transaction for your key has not be confirmed yet. It should be completed shortly.',
+                        confirmed: 'Thank you. Your key is confirmed. ',
+                        noWallet: 'In order to use the Unlock Protocol and earn GGL rewards you need to get a blockchain wallet. Any ERC20/ERC1155 compatible will work.',
                     },
                     referrer: '0xreferrer' // Address of the referrer who will earn UDT governance tokens if the transaction is eligible.
                 }
@@ -125,17 +125,47 @@
                         <div class="image-title-wrap">
                             <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
                                     class="image-title">Uploaded Image</span></button>
+                            <br>
+                            
                         </div>
                     </div>
                 </div>
 
+                <div align="justify/center" style="width: 90%;"  >
+                    <input type="checkbox" id="userID" name="userName" value="signed">
+                    <label for="userSigned"> ${user1ID} SIGN HERE TO APPROVE AND VERIFY DOCUMENT FROM CID ${ipfsCid}  </label><br>
+                    <input type="checkbox" id="userID" name="userName" value="signed">
+                    <label for="userSigned"> ${user2ID} SIGN HERE TO APPROVE AND VERIFY DOCUMENT FROM CID ${ipfsCid} </label><br>
+                    <input type="checkbox" id="userID" name="userName" value="signed">
+                    <label for="userSigned"> ${user3ID} SIGN HERE TO APPROVE AND VERIFY DOCUMENT FROM CID ${ipfsCid} </label><br>
+                    <input type="checkbox" id="userID" name="userName" value="signed">
+                    <label for="userSigned"> ${user4ID} SIGN HERE TO APPROVE AND VERIFY DOCUMENT FROM CID ${ipfsCid} </label><br>
+                </div>
+                
+                <br>
+                <P> 
+                Please enter userID for additional signer and press ADD SIGNER to include an other party to your document. 
+                </P>
+                <input type="text" id="userID" name="userID"> <button style="width: 30%; margin: 0 auto;" , class="button">
+                    ADD SIGNER
+                <br>
+                </button>
+                <br>
+                <P>
+                    Please enter userID for additional witness and press ADD WITNESS to include witnesses to your document.
+                </P>
+                <input type="text" id="userID" name="userID"> <button style="width: 30%; margin: 0 auto;" , class="button">
+                    ADD WITNESS
+                </button><br>
+                
                 <div class="frame">
                     <p align="justify/center" style="width: 90%; 
         margin: 
         0 auto;" , class="unlock-content locked">
                         Please sign up to continue with Unlock-Protocol login.
                         <br><br>
-                        All are optional. Reward eligibility requires User Name, E-mail, and Googli.eth Unlock-Protocol
+                        All logins are optional. Reward eligibility requires User Name, E-mail, and Googli.eth
+                        Unlock-Protocol
                         NFT.
                         <br><br>
                         Full login information is required for increased document verification.
