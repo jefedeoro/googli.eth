@@ -18,11 +18,12 @@ export const usePaywall = (lockAddresses) => {
           urlParams.get('icon') ||
           'https://app.unlock-protocol.com/static/images/svg/default.svg',
         callToAction: {
-          default: 'This content is locked. sign up to access it!',
-          expired: 'This key is now expired. Please renew of sign up for a new key.',
-          pending: 'Thank you. The transaction for your key has not be confirmed yet. It should be completed shortly.',
-          confirmed: 'Thank you. Your key is confirmed. ',
-          noWallet: 'In order to use the Unlock Protocol and earn GGL rewards you need to get a blockchain wallet. Any ERC20/ERC1155 compatible will work.',
+          default:
+            'Purchase access to the newsletter with crypto! You will need to send two transactions, one to approve the ERC20 transfer, and one for the actual purchase.',
+          pending:
+            'Your transaction has been sent. As soon as it has been mined, you will receive your Non Fungible Token!',
+          confirmed:
+            'You already have a key and you will soon receive new emails!',
         },
       }
       unlockConfig.locks = lockAddresses.reduce((locks, lockAddress) => {
@@ -39,20 +40,78 @@ export const usePaywall = (lockAddresses) => {
           name: 'Email Address',
           type: 'email',
           required: true,
-          userId: '<gglID>',
-          firstName: '<firstName>',
-          lastName: '<lastName>',
-          dob: '<dob>',
-          walletAddress: '<walletAddress>',
-          idUpload: '<image>',
-          signer: '<sSignedHash>',
-          witness: '<wSignedHash>',
-          finalHash: '<allSignedHash>',
-          docRole: '<owner/singer/witness/all>',
-          verificationLevel: '<numberOfCompletedKycNumber>',
-          userNonce: '<nonce>',
+        },
+        {
+          name: 'First name',
+          type: 'text',
           required: false,
         },
+        {
+          name: 'Last name',
+          type: 'text',
+          required: false,
+        },
+        {
+          name: 'Date of Birth',
+          type: 'date',
+          required: false,
+        },
+        {
+          name: 'Wallet Address',
+          type: 'address',
+          required: false,
+        },
+        {
+          name: 'Date of Birth',
+          type: 'date',
+          required: false,
+        },
+        {
+          name: 'ID verification',
+          type: 'boolean',
+          required: false,
+        },
+        {
+          name: 'Signer',
+          type: 'boolean',
+          required: false,
+        },
+        {
+          name: 'Signed Hash',
+          type: 'sha256',
+          required: false,
+        },
+        {
+          name: 'Witness',
+          type: 'boolean',
+          required: false,
+        },
+        {
+          name: 'Signed Witness Hash',
+          type: 'sha256',
+          required: false,
+        },
+        {
+          name: 'Document Owner',
+          type: 'sha256',
+          required: false,
+        },
+        {
+          name: 'Final Hash',
+          type: 'sha256',
+          required: false,
+        },
+        {
+          name: 'KYC Verification Level',
+          type: 'rating',
+          required: false,
+        },
+        {
+          name: 'User Nonce',
+          type: 'nonce',
+          required: true,
+        },
+
       ]
       window.unlockProtocolConfig = unlockConfig
 
