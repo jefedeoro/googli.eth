@@ -41,65 +41,126 @@ const setKeyOptions = {
     keyId: 'Googli.eth',
     locksmithHost: './index.html',
     metadata: {
-    //    fieldName: 'the string value to store',
-        userId: '<gglID>',
-        firstName: '<firstName>',
-        lastName: '<lastName>',
-        dob: '<dob>',
-        walletAddress: '<walletAddress>',
-        idCheck: '<boolean>',
-        signer: '<boolean>',
-        signedHash: '<signedHash>',
-        witness: '<boolean>',
-        witnessHash: '<witnessHash>',
-        finalHash: '<finalHash>',
-        docRole: '<owner/singer/witness/all>',
-        verificationLevel: '<numberOfCompletedKycNumber>',
-        userNonce: '<nonce>',
+        //    fieldName: 'the string value to store',
+        [
+            {
+                name: 'Email Address',
+                type: 'email',
+                required: true,
+            },
+            {
+                name: 'First name',
+                type: 'text',
+                required: false,
+                public: true,
+            },
+            {
+                name: 'Last name',
+                type: 'text',
+                required: false,
+            },
+            {
+                name: 'Date of Birth',
+                type: 'date',
+                required: false,
+            },
+            {
+                name: 'Wallet Address',
+                type: 'address',
+                required: false,
+            },
+            {
+                name: 'Date of Birth',
+                type: 'date',
+                required: false,
+            },
+            {
+                name: 'ID verification',
+                type: 'boolean',
+                required: false,
+            },
+            {
+                name: 'KYC Verification Level',
+                type: 'rating',
+                required: false,
+            },
+            {
+                name: 'User Nonce',
+                type: 'nonce',
+                required: true,
+            },
+        ],
     },
-};
 
-// Set key-specific metadata (e.g., ticket has been checked in)
-walletService.setKeyMetadata(setKeyOptions, (error, succeeded) => {
-    if (succeeded) {
-        console.log('set the metadata!');
-    } else {
-        console.log(error);
-    }
-});
+    // Set key-specific metadata (e.g., ticket has been checked in)
+    walletService.setKeyMetadata(setKeyOptions, (error, succeeded) => {
+        if (succeeded) {
+            console.log('set the metadata!');
+        } else {
+            console.log(error);
+        }
+    }),
 
-const setUserOptions = {
-    lockAddress: 'your lock address here',
-    userAddress: 'address of user wallet',
-    locksmithHost: 'the URL of an instance of locksmith',
-    metadata: {
-        publicData: {
-            userId: '<gglID>',
-            userNonce: '<nonce>',
-        },
-        protectedData: {
-            firstName: '<firstName>',
-            lastName: '<lastName>',
-            dob: '<dob>',
-            walletAddress: '<walletAddress>',
-            idCheck: '<boolean>',
-            signer: '<boolean>',
-            signedHash: '<signedHash>',
-            witness: '<boolean>',
-            witnessHash: '<witnessHash>',
-            finalHash: '<finalHash>',
-            docRole: '<owner/singer/witness/all>',
-            verificationLevel: '<numberOfCompletedKycNumber>',
-            
+    const setUserOptions = {
+        lockAddress: 'your lock address here',
+        userAddress: 'address of user wallet',
+        locksmithHost: 'the URL of an instance of locksmith',
+        metadata: {
+            publicData: {
+                [
+                    {
+                        name: 'Email Address',
+                        type: 'email',
+                        required: true,
+                    },
+                    {
+                        name: 'First name',
+                        type: 'text',
+                        required: false,
+                        public: true,
+                    }
+                ],
+            },
+            protectedData: {
+                [
+                    {
+                        name: 'Last name',
+                        type: 'text',
+                        required: false,
+                    },
+                    {
+                        name: 'Date of Birth',
+                        type: 'date',
+                        required: false,
+                    },
+                    {
+                        name: 'Wallet Address',
+                        type: 'address',
+                        required: false,
+                    },
+                    {
+                        name: 'Date of Birth',
+                        type: 'date',
+                        required: false,
+                    },
+                    {
+                        name: 'ID verification',
+                        type: 'boolean',
+                        required: false,
+                    },
+
+                ],
+
+            },
         },
     },
-};
 
-// set user-specific metadata (e.g., email address, name)
-walletService.setUserMetadata(setUserOptions, (error, succeeded) => {
-    if (succeeded) {
-        console.log('Please fill in the form completely to continue with KYC verification.');
-    } else {
-        console.log(error);
-    }
-});
+    // set user-specific metadata (e.g., email address, name)
+    walletService.setUserMetadata(setUserOptions, (error, succeeded) => {
+        if (succeeded) {
+            console.log('Please fill in the form completely to continue with KYC verification.');
+        } else {
+            console.log(error);
+        }
+    }),
+},
