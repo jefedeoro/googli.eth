@@ -158,7 +158,7 @@ const setKeyOptions = {
     // set user-specific metadata (e.g., email address, name)
     walletService.setUserMetadata(setUserOptions, (error, succeeded) => {
         if (succeeded) {
-            console.log('Please fill in the form completely to continue with KYC verification.');
+            console.log('Thank you for signing up.');
         } else {
             console.log(error);
         }
