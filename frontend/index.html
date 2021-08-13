@@ -16,47 +16,54 @@
 <body>
     <section class="header">
         <nav>
-            <a href="index.html"></a>
+
+            <h1>
+                <a href="index.html"><img src="assets/googli-logo.png" style="vertical-align: middle;" /><span>Googli.eth</span></a>
+            </h1>
+
             <div class="nav-links">
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">PRODUCT</a></li>
-                    <li><a href="">DEVELOPERS</a></li>
-                    <li><a href="">PRICING</a></li>
+                <ul class="top-menu">
+                    <li><a href="documents.html">Documents</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">Pricing</a></li>
+                    <li><a href="">Developers</a></li>
+                    <li><a href="">Doc</a></li>
 
                 </ul>
 
             </div>
         </nav>
         <div class="text-box">
-            <h1>googli.eth</h1>
+            <p>googli.eth</p>
             <p>HackFS 2021 project</p>
-            <a href="" class="hero-btn">Know more</a>
 
         </div>
 
         <div class="file-upload">
-            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Document</button>
+            <form id="upload-form">
+                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Document</button>
 
-            <div class="image-upload-wrap">
-                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                <div class="drag-text">
-                    <h3>Drag and drop a file or select add Image</h3>
+                <div class="image-upload-wrap">
+                    <input class="file-upload-input" id="filepicker" type='file' onchange="readURL(this);" required />
+                    <div class="drag-text">
+                        <h3>Drag and drop a file or select add Image</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="file-upload-content">
-                <img class="file-upload-image" src="#" alt="your image" />
-                <div class="image-title-wrap">
-                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                <div class="file-upload-content">
+                    <img class="file-upload-image" src="#" alt="file" />
+                    <div class="image-title-wrap">
+                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded File</span></button>
+                        <input type="submit" class="submit-image" value="Submit" id="submit" />
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
 
     </section>
 
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="web3.storage.js"></script>
 
 
 
