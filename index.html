@@ -147,7 +147,12 @@
                     </div>
                 </div>
 
-                <div script= "addEventListener" id="verificationSection" >
+                <div onclick= {script= "addEventListner(
+                    if("locked", "Please Unlock.") {
+                        return true,
+                    } else ("unlocked", "Unlocked") { 
+                        return false,
+                    })}>
                     <div align="justify/center" style="width: 90%;">
                         <input type="checkbox" id="userID" name="userName" value="signed">
                         <label for="userSigned"> ${user1ID} SIGN HERE TO APPROVE AND VERIFY DOCUMENT FROM CID ${ipfsCid}
