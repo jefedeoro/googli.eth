@@ -1,19 +1,20 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
+    <meta name="viewport" content="with=device-width, initial scale=1.0">
 
+    <title> Googli.eth </title>
     <link rel="stylesheet" href="Style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
-        rel="stylesheet">
     <!-- Include this script in the <head> section of your page -->
-    <script src="https://paywall.unlock-protocol.com/static/paywall.min.js"
-        data-unlock-url="https://paywall.unlock-protocol.com"></script>
-    <meta name="lock" content="<?= $lockAddress ?>" />
+    <script src="https://assets.inplayer.com/paywall/staging/paywall.min.js" data-unlock-url="https://paywall.unlock-protocol.com"></script>
+
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <script>
         var unlockProtocolConfig = {
@@ -27,66 +28,61 @@
             "callToAction": {
                 "default": "Please Unlock for full features and reward options!"
             },
-            metadataInputs: [
-                {
-                    name: 'Email Address',
-                    type: 'email',
-                    required: true,
-                },
-                {
-                    name: 'First name',
-                    type: 'text',
-                    required: false,
-                    public: true,
-                },
-                {
-                    name: 'Last name',
-                    type: 'text',
-                    required: false,
-                },
-                {
-                    name: 'Date of Birth',
-                    type: 'date',
-                    required: false,
-                },
-            ],
+            metadataInputs: [{
+                name: 'Email Address',
+                type: 'email',
+                required: true,
+            }, {
+                name: 'First name',
+                type: 'text',
+                required: false,
+                public: true,
+            }, {
+                name: 'Last name',
+                type: 'text',
+                required: false,
+            }, {
+                name: 'Date of Birth',
+                type: 'date',
+                required: false,
+            }, ],
         }
 
         let unlocked = false
-        // Once the doc has been loaded
+            // Once the doc has been loaded
         window.addEventListener('DOMContentLoaded', event => {
             //loadAds()
-            setTimeout(() => !unlocked && loadAds(document), 100)
+            setTimeout(() => !unlocked && showLogout(document), 100)
         })
 
-        window.addEventListener('unlockProtocol', function (e) {
+        window.addEventListener('unlockProtocol', function(e) {
             var state = e.detail
             if (state === 'locked') {
-                loadAds(document)
+                showLogout(document)
             } else if (state === 'unlocked') {
                 unlocked = true
-                hideAds(document)
+                showLogin(document)
             }
         })
     </script>
 
     <script>
-            (function (d, s) {
-                var js = d.createElement(s),
-                    sc = d.getElementsByTagName(s)[0];
-                js.src = "https://paywall.unlock-protocol.com/static/unlock.latest.min.js";
-                sc.parentNode.insertBefore(js, sc);
-            }(document, "script"));
+        (function(d, s) {
+            var js = d.createElement(s),
+                sc = d.getElementsByTagName(s)[0];
+            js.src = "https://paywall.unlock-protocol.com/static/unlock.latest.min.js";
+            sc.parentNode.insertBefore(js, sc);
+        }(document, "script"));
     </script>
 
     <div id="comment-form"></div>
     <script>
         // Load JS variable values from PHP variables
-        var commentForm = <?= json_encode($commentForm) ?>;
-        var commentCta = <?= json_encode($commentCta) ?>;
+        var commentForm = "";
+        var commentCta = "";
 
         // Listen to Unlock protocol API
-        window.addEventListener('unlockProtocol', function (e) {
+        window.addEventListener('unlockProtocol', function(e) {
             var state = e.detail
             if (state === 'unlocked') {
                 $('#comment-form').html(commentForm);
@@ -96,97 +92,83 @@
             };
         });
     </script>
-    <link rel="stylesheet" href="adremover.css" type="text/css" />
 </head>
 
 <body>
-    <header>
-        </head>
+    <nav>
 
-        <body>
-            <section class="header">
-                <nav>
-                    <a href="index.html"><img src="/logo.png" alt="logo" </a>
-                        <div class="nav-links">
-                            <ul>
-                                <li><a href="">HOME</a></li>
-                                <li><a href="">ABOUT US</a></li>
-                                <li><a href="">PRODUCT</a></li>
-                                <li><a href="">DEVELOPERS</a></li>
-                                <li><a href="">PRICING</a></li>
-                            </ul>
-                        </div>
-                </nav>
-                <title> Googli.eth Decentralized Notary</title>
-                <h1>Googli.eth</h1>
-                <h2>Your decentralized notary.</h2>
-                <br>
-                <br>
-                <br>
-                <textarea class='autoExpand' rows='10' data-min-rows='10' placeholder='Type your documents here or upload them below. 
+        <h1>
+            <a href="index.html"><img src="assets/googli-logo.png" style="vertical-align: middle;" /><span>Googli.eth</span></a>
+        </h1>
 
-*Important* Please copy your text before proceeding to Sign in.
+        <div class="nav-links">
+            <ul class="top-menu">
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="">Product</a></li>
+                <li><a href="">Pricing</a></li>
+                <li><a href="">Developers</a></li>
+                <li><a href="">Doc</a></li>
 
-Your document and files are saved to the url address above. 
-To add more users to a document, if you would like a verification approval or just want to EARN REWARDS Unlock Now!'>
-</textarea>
-                <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-                <div class="file-upload">
-                    <button class="file-upload-btn" type="button"
-                        onclick="$('.file-upload-input').trigger( 'click' )">Add
-                        Document</button>
-                    <div class="image-upload-wrap">
-                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                        <div class="drag-text">
-                            <h2>Drag and drop a file or select add Image</h2>
-                        </div>
-                    </div>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="file-upload">
+        <form id="upload-form">
+            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Document</button>
+
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" id="filepicker" type='file' onchange="readURL(this);" required />
+                <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
                 </div>
-         
-                <div class="unlock-cta">
-                    <a href="#" onclick="window.unlockProtocol && unlockProtocol.loadCheckoutModal()"
-                        align="justify/center" style="width: 100%;">
-                        <input type="checkbox" style="size: 15px;" id="userID" name="userName" value="signed">
-                        <label for="userSigned" style="overflow: auto; justify-content: stretch;">
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" src="#" alt="your image" />
+                <div class="image-title-wrap">
+                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <spanclass="image-title">Uploaded Image</span></button>
+                    <input type="submit" class="submit-image" value="Submit" id="submit" />
+                </div>
+            </div>
+
+        </form>
+        <br/><br/>
+        <div class="unlock-cta">
+            <div>
+                <p>
+                    Please enter userID for additional signer and press ADD SIGNER to include an other party to your document.
+                </p>
+                <input type="email" id="newUserEmail" name="newUserEmail" placeholder='Add new users e-mail address here.' style="width: 33%;padding-top: 1.7%;
+                padding-bottom: 1.8%;">
+                <button style="width: 32%; margin: 0 auto;" class="file-upload-btn">
+                    ADD SIGNER
+                </button>
+                <button style="align-items: center; width: 32%; margin: 0 auto;" class="file-upload-btn">
+                        ADD WITNESS
+                </button>
+            </div>
+            <br><br>
+            <a href="#" onclick="window.unlockProtocol && unlockProtocol.loadCheckoutModal()">
+                <input type="checkbox" style="size: 15px;" id="userID" name="userName" value="signed">
+                <label for="userSigned" style="overflow: auto; justify-content: stretch;">
                             <h3>BY CLICKING HERE YOU APPROVE AND VERIFY DOCUMENTS ON THIS PAGE.</h3>
                             <h4>CLICKS WILL ONLY BE RECORDED IF YOU HAVE AN UNLOCK KEY.</h4>
                             <h5>The system saves first the user then if they have clicked the box. If there is no user it will not record the results. Please sign up for full features and to earn rewards!</h5>
-                </div>
-                <br>
-                <div class="file-upload-content">
-                    <img class="file-upload-image" src="#" alt="your image" />
-                    <div class="image-title-wrap">
-                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
-                                class="image-title">Uploaded Image</span></button>
-                    </div>
-                </div>
-                <div>
-                    <P>
-                        Please enter userID for additional signer and press ADD SIGNER to include an other party to your
-                        document.
-                    </P>
-                    <input type="email" id="newUserEmail" name="newUserEmail"
-                        placeholder='Add new users e-mail address here.' style="width: 350px;"> <button
-                        style="width: 30%; margin: 0 auto;" , class="button">
-                        ADD SIGNER
-                        <button style="align-items: center; width: 30%; margin: 0 auto;" , class="button">
-                            ADD WITNESS
-                        </button>
-                    </button>
-
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="text-box">
-                    <h1>googli.eth</h1>
-                    <p>HackFS 2021 project</p>
-                    <a href="" class="hero-btn">Know more</a>
-
-                </div>
+                
+            </a>
+            <br><br>
+            <div id="status">
+                Web3.storage status: <span id="user-storage-status">🗷</span><br/>
+                Unlock user status: <span id="unlock-user-status">🗷</span><br/>
+                Withness status: <span id="unlock-withness-status">🗷</span><br/>
+            </div>
+            
+        </div>
 
 
-            </section>
-        </body>
+    <script src="index.js"></script>
+    <script src="web3.storage.js"></script>
+</body>
 
 </html>

@@ -30,3 +30,15 @@ $('.image-upload-wrap').bind('dragover', function() {
 $('.image-upload-wrap').bind('dragleave', function() {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
+
+function showLogout(document) {
+    $(".log-status").hide();
+    $("#logout-status").show();
+    $("#user-storage-status").text("🗷");
+}
+
+function showLogin(document) {
+    $(".log-status").hide();
+    $("#login-status").show();
+    $("#user-storage-status").text("✔️");
+}

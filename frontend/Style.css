@@ -24,7 +24,9 @@ h1 a {
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(4, 9, 30, 0.7));
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
 }
 
 nav {
