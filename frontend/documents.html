@@ -7,6 +7,7 @@
 
     <title> Googli.eth </title>
     <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="document.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
@@ -33,13 +34,8 @@
 
             </div>
         </nav>
-        <div class="text-box">
-            <p>googli.eth</p>
-            <p>HackFS 2021 project</p>
 
-        </div>
-
-        <div class="file-upload">
+        <div class="file-upload contract" style="display: block;">
             You can create easily create a document customizing a template. Please chose the template you would like to use:
             <div style="text-align: center;">
                 <select name="template" id="contract-val" onchange="loadContract()">
@@ -52,15 +48,26 @@
             </div>
         </div>
 
-        <div id="nda" class="contract">
+        <div id="nda-config" class="contract file-upload">
+            <h1>NDA contract</h1>
+            <fieldset>
+                <legend><span class="number">1</span> Effective date</legend>
+                <input type="date" name="nda-date-val" id="nda-date-val" onchange="updateNdaDate()" />
+            </fieldset>
+            <fieldset>
+                <legend><span class="number">2</span> Disclosing party</legend>
+                <input type="text" name="nda-disclosing-val" id="nda-disclosing-val" onchange="updateNdaDisclosing()" />
+            </fieldset>
+            <fieldset>
+                <legend><span class="number">3</span> Recipient</legend>
+                <input type="text" name="nda-recipient-val" id="nda-recipient-val" onchange="updateNdaRecipient()" />
+            </fieldset>
 
-            <label for="nda-date-val">Effective date</label>
-            <input type="date" name="nda-date-val" id="nda-date-val" onchange="updateNdaDate()" />
-            <label for="nda-disclosing-val">Disclosing party</label>
-            <input type="text" name="nda-disclosing-val" id="nda-disclosing-val" onchange="updateNdaDisclosing()" />
-            <label for="nda-recipient-val">Recipient</label>
-            <input type="text" name="nda-recipient-val" id="nda-recipient-val" onchange="updateNdaRecipient()" />
+            <button type="submit" class="file-upload-btn" onclick="generateContract()">Generate</button>
 
+            </form>
+        </div>
+        <div id="nda" class="contract file-upload">
             <p style="text-align: left;">THIS AGREEMENT is made and entered into as <span id="nda-date"></span> (“Effective Date”), by and between <span id="nda-disclosing"></span>, (“the Disclosing Party”) and <span id="nda-recipient"></span>, (“the Recipient”) (collectively, “the
                 Parties”).
             </p>

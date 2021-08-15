@@ -1,7 +1,7 @@
 function loadContract() {
     $(".contract").hide();
     var contract = $("#contract-val").val()
-    $("#" + contract).show();
+    $("#" + contract + "-config").show();
 }
 
 function updateNdaDate() {
@@ -14,4 +14,11 @@ function updateNdaDisclosing() {
 
 function updateNdaRecipient() {
     $("#nda-recipient").text($("#nda-recipient-val").val())
+}
+
+function generateContract() {
+    $(".contract").hide();
+    var contract = $("#contract-val").val()
+    $("#" + contract).show();
+
 }

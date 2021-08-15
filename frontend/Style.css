@@ -80,9 +80,7 @@ nav img {
 
 .hero-btn {
     display: inline-block;
-    <!--I have an issue with this section,
-    I want to make button with the border before hover but it doesn't appear. -->
- width: 90%;
+    width: 90%;
     text-decoration: none;
     color: #45108a;
     border: 1px solid #45108a);
