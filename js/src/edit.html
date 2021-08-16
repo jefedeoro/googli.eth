@@ -11,18 +11,23 @@
 <link rel="stylesheet" type="text/css" href="edit.css">
 
 <body>
-    <div class="text-box">
-        <h1>Googli.eth</h1>
-    </div>
-    <div id="doc-title" contenteditable="true" placeholder="googli.ee"></div>
-    <div id="doc-file"></div>
+    <nav>
 
-    <div id="placeholder">
+        <h1>
+            <a href="index.html"><img src="googli-logo.png" style="vertical-align: middle;" /><span>Googli.eth</span></a>
+        </h1>
+
+
+    </nav>
+    <div id="doc-title" contenteditable="true" placeholder="googli.ee" class="file-upload"></div>
+    <div id="doc-file" class="file-upload"></div>
+
+    <div id="placeholder" class="file-upload">
         googli.ee things<br> can be conveyed in a link.<br> type here &ndash; and then share!
 
     </div>
     <div id="copy-message">Link copied to clipboard.</div>
-    <div id="content"></div>
+    <div id="content" class="file-upload"></div>
     <span id="toolbar">
   <a target="_blank" id="length"></a>&nbsp;<a target="_blank" id="qrcode" href="qr.html">qr code</a>&nbsp;<a target="_blank" id="menu">menu</a>
   <div id="menu-contents" class="menu">
