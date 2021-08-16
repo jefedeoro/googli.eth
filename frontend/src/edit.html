@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src https://codepen.io; style-src 'unsafe-inline' 'self'">
+<title>googli.ee</title>
+<script src="lzma/lzma_worker-min.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="data.js"></script>
+<script src="edit.js"></script>
+<link rel="stylesheet" type="text/css" href="edit.css">
+
+<body>
+    <nav>
+
+        <h1>
+            <a href="index.html"><img src="googli-logo.png" style="vertical-align: middle;" /><span>Googli.eth</span></a>
+        </h1>
+
+
+    </nav>
+    <div id="doc-title" contenteditable="true" placeholder="googli.ee" class="file-upload"></div>
+    <div id="doc-file" class="file-upload"></div>
+
+    <div id="placeholder" class="file-upload">
+        googli.ee things<br> can be conveyed in a link.<br> type here &ndash; and then share!
+
+    </div>
+    <div id="copy-message">Link copied to clipboard.</div>
+    <div id="content" class="file-upload"></div>
+    <span id="toolbar">
+  <a target="_blank" id="length"></a>&nbsp;<a target="_blank" id="qrcode" href="qr.html">qr code</a>&nbsp;<a target="_blank" id="menu">menu</a>
+  <div id="menu-contents" class="menu">
+    <a id="copy">copy link</a><br>
+    ----<br>
+    <span id="menus-share-hint" class="disabled">share via</span><br>
+    <a target="_blank" id="twitter" href="https://twitter.com/">twitter</a><br>
+    <!--  <a target="_blank" id="bitly" href="https://bitly.com/">Bitly</a><br> -->
+
+    ----<br>
+    <a id="new" href="edit.html">new site</a><br>
+    </div>
+    </span>
+</body>
+
+</html>

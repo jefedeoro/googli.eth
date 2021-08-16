@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width">
+<title>googli.ee</title>
+<script src="qrcode.min.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="edit.css">
+
+<body>
+
+    <div id="copy-message">Error creating QR code. Invalid url.</div>
+    <div id="content">
+        <div id="qrcode"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    function findGetParameter(parameterName) {
+        var result = null,
+            tmp = [];
+        location.search
+            .substr(1)
+            .split("&")
+            .forEach(function(item) {
+                tmp = item.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            });
+        return result;
+    }
+
+    var url = findGetParameter("url");
+    if (url == null) {
+        $("#copy-message").show()
+    }
+    new QRCode(document.getElementById("qrcode"), url);
+</script>
+
+</html>
